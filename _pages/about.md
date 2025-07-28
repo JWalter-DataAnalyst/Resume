@@ -2,7 +2,6 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
 
 profile:
   align: right
@@ -34,5 +33,3 @@ I’m currently finishing up my bachelor’s degree in Data Analytics with a min
 Outside of class, I enjoy helping others who are new to the field. I’ve spent a lot of time tutoring students and introducing them to tools like SQL, Python, R, and Tableau. I remember what it was like starting out, so I try to make things approachable and practical, especially for those transitioning into data from other backgrounds like I did.
 
 My background has given me a unique perspective combining real world experience, strong communication skills, and a love for problem solving and I’m excited to keep growing in the data space.
-
-# Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
