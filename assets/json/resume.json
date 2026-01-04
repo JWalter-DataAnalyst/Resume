@@ -6,7 +6,7 @@
     "email": "jwalter28@rockets.utoledo.edu",
     "phone": "(734) 347-8218",
     "url": "https://linkedin.com/in/jwaltersdata",
-    "summary": "Data Analytics student with experience in SQL, Python, Power BI, and data visualization. Background in law enforcement, strong organizational skills, and leadership experience in financial management for student organizations.",
+    "summary": "Data Analytics student with experience in SQL, Python, Power BI, Excel, and Tableau. Background in law enforcement, strong organizational skills, and leadership experience in financial management for student organizations.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -44,7 +44,7 @@
       "location": "University of Toledo",
       "startDate": "2025-10-01",
       "endDate": "2025-11-01",
-      "summary": "Analyzed housing price variation using SQL Server and Power BI.",
+      "summary": "Analyzed housing price variation using SQL Server and Power BI/Tableau.",
       "highlights": [
         "Utilized SQL Server for data loading, preparation, and manipulation.",
         "Created Power BI visualizations and summary statistics.",
