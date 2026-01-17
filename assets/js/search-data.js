@@ -14,7 +14,7 @@ ninja.data = [{
           description: "Projects I have done to show my understanding of skills needed in todays data driven world.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/Resume/Projects/";
+            window.location.href = "/Resume/projects/";
           },
         },{id: "nav-cv",
           title: "cv",
