@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Projects I have Worked On
-permalink: /Here you will find projects that showcase my knowledge of the field/
-description: Since I am a data analyst I primarly work with tranformation of data to create new insights check below to see.
+title: projects
+permalink: /projects/
+description: A growing collection of your cool projects.
 nav: true
 nav_order: 3
-display_categories: [Schooling, Misc Projects]
+display_categories: [work, fun]
 horizontal: false
 ---
 
