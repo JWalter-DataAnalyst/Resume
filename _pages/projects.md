@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Projects
-permalink: /Projects/
+permalink: /projects/
 description: Projects I have done to show my understanding of skills needed in todays data driven world.
 nav: true
 nav_order: 3
