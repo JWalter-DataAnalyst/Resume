@@ -10,11 +10,11 @@ ninja.data = [{
       window.location.href = "/Resume/";
     },
   },{id: "nav-projects",
-          title: "projects",
-          description: "A growing collection of your cool projects.",
+          title: "Projects",
+          description: "Projects I have done to show my understanding of skills needed in todays data driven world.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/Resume/projects/";
+            window.location.href = "/Resume/Projects/";
           },
         },{id: "nav-cv",
           title: "cv",
