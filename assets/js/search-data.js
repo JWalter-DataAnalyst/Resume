@@ -402,9 +402,9 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-recession-indicator-s",
-          title: 'Recession Indicator(s)',
-          description: "An emperical report I did in order to determine whether or not we will face an economic recession or not",
+          section: "News",},{id: "projects-u-s-recession-indicators-analysis",
+          title: 'U.S. Recession Indicators Analysis',
+          description: "An empirical analysis of key economic indicators to forecast the likelihood of a U.S. recession.",
           section: "Projects",handler: () => {
               window.location.href = "/Resume/projects/1_project/";
             },},{id: "projects-project-2",
