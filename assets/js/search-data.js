@@ -407,9 +407,9 @@ ninja.data = [{
           description: "An empirical analysis of key economic indicators to forecast the likelihood of a U.S. recession.",
           section: "Projects",handler: () => {
               window.location.href = "/Resume/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+            },},{id: "projects-university-of-toledo-crime-heatmap",
+          title: 'University of Toledo Crime Heatmap',
+          description: "A visualization of crime data for the University of Toledo campus area.",
           section: "Projects",handler: () => {
               window.location.href = "/Resume/projects/2_project/";
             },},{id: "projects-project-3-with-very-long-name",
@@ -432,9 +432,9 @@ ninja.data = [{
           description: "a project with no image",
           section: "Projects",handler: () => {
               window.location.href = "/Resume/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
+            },},{id: "projects-project-2",
+          title: 'project 2',
+          description: "a project with a background image and giscus comments",
           section: "Projects",handler: () => {
               window.location.href = "/Resume/projects/7_project/";
             },},{id: "projects-project-8",
