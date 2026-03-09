@@ -10,11 +10,11 @@ ninja.data = [{
       window.location.href = "/Resume/";
     },
   },{id: "nav-projects",
-          title: "projects",
-          description: "A growing collection of your cool projects.",
+          title: "Projects",
+          description: "Projects I have worked on while studying data analytics at the University of Toledo",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/Resume/projects/";
+            window.location.href = "/Resume/Projects/";
           },
         },{id: "nav-cv",
           title: "cv",
