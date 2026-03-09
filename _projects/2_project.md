@@ -2,7 +2,7 @@
 layout: page
 title: University of Toledo Crime Heatmap
 description: A visualization of crime data for the University of Toledo campus area.
-img: assets/img/4.jpg
+img: assets/img/image-18.jpg
 importance: 1
 category: work
 related_publications: true
@@ -11,7 +11,7 @@ related_publications: true
 This project visualizes reported crime incidents around the University of Toledo. Using publicly available crime data, I generated a heatmap to identify areas with higher concentrations of criminal activity, providing a spatial analysis of campus safety.
 
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
+    <div class="col-sm-12 mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/Crime_Heatmap.png" title="University of Toledo Crime Heatmap" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
