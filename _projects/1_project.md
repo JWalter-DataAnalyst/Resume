@@ -1,78 +1,62 @@
 ---
 layout: page
-title: Recession Indicator(s)
-description: An emperical report I did in order to determine whether or not we will face an economic recession or not
+title: U.S. Recession Indicators Analysis
+description: An empirical analysis of key economic indicators to forecast the likelihood of a U.S. recession.
 img: assets/img/22.jpg
 importance: 1
 category: work
 related_publications: true
 ---
 
-here you will see the regressionary work done to show whether or not we will face a recession as you can see the liklihood of that is very low so we do not need to worry about it within the next 10 years if the economy stays on track.
-
-
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+This project presents an empirical analysis of several key economic indicators to build a predictive model for U.S. recessions. By examining historical data, we can identify patterns that have historically preceded economic downturns and assess the current economic climate.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Coe.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Coe.jpg" title="Model Coefficients" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Cor.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Cor.jpg" title="Indicator Correlation Matrix" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Reg.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Reg.jpg" title="Regression Results" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+    A selection of key visualizations from the analysis. From left to right: model coefficients for leading indicators, a correlation matrix of economic variables, and initial regression results.
 </div>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Reg.png" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Reg.png" title="Regression Summary Output" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    This image can also have a caption. It's like magic.
+    The summary output from the multiple regression model, detailing coefficients, standard errors, p-values, and overall model fit statistics like R-squared.
 </div>
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+The core of the analysis involves building and validating a multiple regression model to predict economic outcomes based on several indicators. I used historical data on variables such as the S&P 500 Price Index, industrial production, CPI, and various Treasury yields. The regression results, shown above, indicate that several factors like the S&P 500 index, industrial production, and long-term interest rates are statistically significant predictors. The model has a moderate explanatory power with an R-squared of approximately 0.38, suggesting these indicators account for a meaningful portion of economic variance.
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/cpi_vs_gdp.png" title="CPI vs. GDP Growth" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/gdp_rolling_average.png" title="GDP Rolling Average" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    Further visualizations exploring relationships between key variables, such as the relationship between CPI and GDP growth, and time-series trends like the rolling average of GDP.
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+### Conclusion
 
-{% raw %}
+This analysis set out to identify key leading indicators for U.S. recessions using a multiple regression model. The model, with an R-squared of 0.38, demonstrates that a combination of financial and economic variables can explain a significant portion of economic fluctuations.
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+Key findings from the regression analysis include:
+*   **Financial Markets:** The S&P 500 index was found to be a highly significant negative predictor, aligning with the theory that stock market downturns often precede economic recessions.
+*   **Real Economy:** Industrial production also showed a strong negative correlation, reinforcing its role as a classic coincident indicator of economic health.
+*   **Inflation and Interest Rates:** Both CPI and various long-term Treasury yields (10-year, 30-year) were identified as significant factors. The relationship between different parts of the yield curve and economic expectations appears complex and is a critical area for monitoring.
+*   **Other Indicators:** The BBK and Housing indices also proved to be powerful predictors, highlighting the importance of broad market and housing sector health.
 
-{% endraw %}
+While the model provides valuable insights, the moderate R-squared value suggests that other factors not included in this analysis also play a role. Future work could explore non-linear relationships, incorporate a wider range of indicators (such as consumer sentiment or credit spreads), and test alternative modeling techniques like logistic regression or machine learning models for a more direct probabilistic forecast.
+
+Ultimately, this project successfully demonstrates a quantitative approach to recession forecasting, confirming the predictive power of several well-known indicators and providing a framework for ongoing economic monitoring.
