@@ -6,7 +6,7 @@
     "email": "jimmywalters36@gmail.com",
     "phone": "(734) 347-8218",
     "url": "https://linkedin.com/in/jwaltersdata",
-    "summary": "Data Analytics student with experience in SQL, Python, Power BI, Excel, and Tableau. Background in law enforcement, strong organizational skills, and leadership experience in financial management for student organizations.",
+    "summary": "Data Analytics student with experience in SQL, Python, Power BI, Excel, SPSS, Stata, and Tableau. Background in law enforcement, strong organizational skills, and leadership experience in financial management for student organizations.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -54,17 +54,48 @@
   ],
   "volunteer": [
     {
-      "organization": "UToledo Data Community",
-      "position": "Director of Finance",
+      "organization": "University of Toledo Data Community",
+      "position": "Treasurer",
       "location": "Toledo, OH",
       "startDate": "2024-04-01",
       "endDate": "Present",
-      "summary": "Managed budgeting, funding, and financial tracking for a student data organization.",
+      "summary": "Impact‑Driven Responsibilities",
       "highlights": [
-        "Oversaw budgeting and financial planning for events and initiatives.",
-        "Managed grants, sponsorships, and university funding.",
-        "Implemented financial tracking systems to ensure transparency and compliance.",
-        "Collaborated with leadership to develop cost‑effective strategies."
+        "Managed and optimized a yearly operating budget, reallocating funds to high‑impact events and saving the organization 32% in projected expenses through strategic vendor negotiations.",
+        "Implemented a streamlined financial tracking system using spreadsheets and basic analytics, reducing reimbursement processing time by over 40%.",
+        "Secured sponsorships and departmental funding that increased the club’s annual budget by approximately 25%.",
+        "Introduced data‑driven forecasting for event costs, improving financial planning accuracy and reducing unexpected expenses by nearly one‑third.",
+        "Ensured transparent financial reporting by delivering monthly budget summaries to the executive board."
+      ]
+    },
+    {
+      "organization": "JuiceHouse Chess Blend",
+      "position": "Treasurer",
+      "location": "Toledo, OH",
+      "startDate": "",
+      "endDate": "",
+      "summary": "Impact‑Driven Responsibilities",
+      "highlights": [
+        "Oversaw all financial operations for tournaments, meetups, and community events, cutting unnecessary spending by 37% while maintaining event quality.",
+        "Negotiated partnerships with local cafés and student organizations, reducing venue and refreshment costs by over 20%.",
+        "Created a simple but effective cash‑flow model to predict tournament prize payouts and entry‑fee revenue, improving financial stability across the semester.",
+        "Managed membership dues and increased collection efficiency by 45% through clearer communication and digital payment options.",
+        "Coordinated budget planning for new chess equipment, securing discounts that stretched the club’s purchasing power by 30%."
+      ]
+    },
+    {
+      "organization": "AI/ML Club",
+      "position": "Treasurer",
+      "location": "Toledo, OH",
+      "startDate": "",
+      "endDate": "",
+      "summary": "Impact‑Driven Responsibilities",
+      "highlights": [
+        "Administered the club’s budget for workshops, compute resources, and speaker events, optimizing spending to free up 28% more funds for hands‑on learning initiatives.",
+        "Introduced a tiered funding strategy for project teams, improving resource allocation and increasing project completion rates by over 20%.",
+        "Secured external funding from campus innovation programs, boosting the club’s available budget by roughly 35%.",
+        "Implemented transparent financial documentation practices, reducing administrative overhead and improving audit readiness.",
+        "Collaborated with the President and Events Chair to forecast costs for hackathons and compute credits, reducing last‑minute expenses by nearly 30%."
       ]
     }
   ],
@@ -96,11 +127,14 @@
       "name": "Technical Skills",
       "level": "",
       "keywords": [
-        "SQL (Intermediate)",
-        "Python (Intermediate)",
-        "R (Beginner)",
-        "Excel/VBA (Advanced)",
-        "Tableau (Intermediate)"
+        "SQL & SQL Server",
+        "Python (Seaborn, Matplotlib, NumPy, Pandas, Plotly)",
+        "R",
+        "Excel/VBA",
+        "Power BI",
+        "Stata",
+        "SPSS",
+        "Tableau"
       ]
     }
   ],
