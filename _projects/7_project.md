@@ -1,81 +1,127 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
+title: Adventure Game
+description: an adventure game using if, elif, and else statements
+img: assets/img/Adventure_game.png
 importance: 2
 category: work
 giscus_comments: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+This project features a text-based adventure game implemented in Python. It demonstrates the use of conditional logic (`if`, `elif`, `else`), loops, functions, and user input handling.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+```python
+#This is out section for listing the options the player will go through will choosing their class, items and adventuring area.
+a = "Welcome to Gillinor! A land full of choices, mystery and potential for massive rewards. Anybody can make it in this world with the right loadout. Now, select your class: Knight or Wizard. "
+choice = input(a).capitalize()
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+tasks = ["Shop", "Adventuring"]
+items = ["Potion", "Armor", "Weapons"]
+potion_items = ["Healing Potion", "Harming Potion", "Physical Potion"]
+armor_items = ["Adamant equipment", "Mithril equipment", "Rune equipment"]
+weapons_items = ["Adamant sword", "Mithril sword", "Rune sword"]
+actions = ["Open the Tomb", "Hack the Branches", "Open the Door"]
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+#By labeling this def shop I can have all of the options the players choices inside the shop added into a easy to read format I will do the same for adventuring later I also need the while true statement here to give the player the option to come back to the start.
+def shop():
+    while True:
+        print("Welcome to the shop! Here are your items: ")
+        print(items)
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+        selected_item = input("Please select an item (Potion, Armor, Weapons), or type 'Exit' to leave the shop: ").capitalize()
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+        if selected_item == "Potion":
+            print("You have selected Potions: ", potion_items)
+            potion_choice = input("Which potion would you like to buy? ").title()
+            if potion_choice == "Healing Potion":
+                print("You have obtained a Healing Potion.")
+            elif potion_choice == "Harming Potion":
+                print("You have obtained a Harming Potion.")
+            elif potion_choice == "Physical Potion":
+                print("You have obtained a Physical Potion.")
+            else:
+                print("Please select a potion choice.")
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+        elif selected_item == "Armor":
+            print("You have selected Armor: ", armor_items)
+            armor_choice = input("Which armor would you like to buy? ").title()
+            if armor_choice == "Adamant Equipment":
+                print("You have obtained Adamant equipment.")
+            elif armor_choice == "Mithril Equipment":
+                print("You have obtained Mithril equipment.")
+            elif armor_choice == "Rune Equipment":
+                print("You have obtained Rune equipment.")
+            else:
+                print("Please select an armor choice.")
 
-{% raw %}
+        elif selected_item == "Weapons":
+            print("You have selected Weapons: ", weapons_items)
+            weapon_choice = input("Which weapon would you like to buy? ").title()
+            if weapon_choice == "Adamant Sword":
+                print("You have obtained an Adamant sword.")
+            elif weapon_choice == "Mithril Sword":
+                print("You have obtained a Mithril sword.")
+            elif weapon_choice == "Rune Sword":
+                print("You have obtained a Rune sword.")
+            else:
+                print("Please select a weapon choice.")
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
+        elif selected_item == "Exit":
+            print("Thank you for visiting the shop. See you next time!")
+            break  
+
+        else:
+            print("That is not an item choice. Please select Potion, Armor, or Weapons.")
+
+#As with the shop tab this is for the player to choose their adventure and what will happen with their choses I cannot code a full game at the moment so the choices aren't as indepth.
+def adventuring():
+    print("Welcome to the start of your adventure!")
+    selected_action = input("Where do you want to explore? Choose one: Open the Tomb, Hack the Branches, Open the Door: ").title()
+
+    if selected_action == "Open The Tomb":
+        print("You approach the ancient tomb. The stone door creaks open as you step inside...")
+        print("You notice four red doorways that illuminate the area")
+        door_choice = input("What door do you go through? N, W, E, S: ").upper()
+        if door_choice in ["N", "W", "E", "S"]:
+            print("You fall through a trapdoor and perish.")
+        else:
+            print("Please select a door choice.")
+
+    elif selected_action == "Hack The Branches":
+        print("You hack your way through the thick branches, revealing a hidden path into the forest...")
+        print("As you walk through the forest you see a building. Do you enter? Y/N ")
+        building_choice = input("Do you enter? Y/N ").upper()
+        if building_choice == "Y":
+            print("You are stabbed from behind and slain")
+        else:
+            print("You decide to turn around returning to the village.")
+
+    elif selected_action == "Open The Door":
+        print("You push the door open and step into a grand hall filled with mysteries...")
+        print("You see a book that looks extra special. Do you reach for the book? Y/N ")
+        book_choice = input("Y/N ").upper()
+        if book_choice == "Y":
+            print("The book levitates off from the bookshelf and begins attacking you. You were unable to get proper footing and fall to the book.")
+        else:
+            print("You decide to turn around returning to the village.")
+
+    else:
+        print("Please select a listed action. Please choose 'Open the Tomb', 'Hack the Branches', or 'Open the Door'.")
+
+#This section is for the choice on what class they want along with what they plan to do after selecting their class.
+if choice == "Knight" or choice == "Wizard":
+    while True:  
+        activity = input("Would you like to go to the Shop, Adventuring, or Exit? ").capitalize()
+
+        if activity == "Shop":
+            shop()
+        elif activity == "Adventuring":
+            adventuring()
+        elif activity == "Exit":
+            print("Thank you for playing!")
+            break  
+        else:
+            print("Please select a listed choice, please choose Shop, Adventuring, or Exit.")
 ```
 
 {% endraw %}
