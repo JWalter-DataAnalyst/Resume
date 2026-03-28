@@ -3,7 +3,7 @@ layout: page
 title: Adventure Game
 description: A text-based adventure demonstrating conditional logic, loops, and modular programming.
 img: assets/img/Adventure_game.png
-importance: 5
+importance: 1
 category: work
 ---
 
