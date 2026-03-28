@@ -8,10 +8,18 @@ category: work
 giscus_comments: true
 ---
 
-This project features a text-based adventure game implemented in Python. It demonstrates the use of conditional logic (`if`, `elif`, `else`), loops, functions, and user input handling.
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <p>This project features a text-based adventure game implemented in Python. It demonstrates the use of conditional logic (<code>if</code>, <code>elif</code>, <code>else</code>), loops, functions, and user input handling.</p>
+        <p>Below is a breakdown of the game's core modules, showcasing how the logic flows from character initialization to the final game loop.</p>
+    </div>
+</div>
+
+<h3 class="mt-4">1. Initialization and Setup</h3>
+<p>The game begins by defining the world and allowing the player to select their class. We also initialize lists for the shop inventory and adventure locations.</p>
 
 ```python
-#This is out section for listing the options the player will go through will choosing their class, items and adventuring area.
+# Character and world setup: Defining classes, items, and actions
 a = "Welcome to Gillinor! A land full of choices, mystery and potential for massive rewards. Anybody can make it in this world with the right loadout. Now, select your class: Knight or Wizard. "
 choice = input(a).capitalize()
 
@@ -21,8 +29,12 @@ potion_items = ["Healing Potion", "Harming Potion", "Physical Potion"]
 armor_items = ["Adamant equipment", "Mithril equipment", "Rune equipment"]
 weapons_items = ["Adamant sword", "Mithril sword", "Rune sword"]
 actions = ["Open the Tomb", "Hack the Branches", "Open the Door"]
+```
 
-#By labeling this def shop I can have all of the options the players choices inside the shop added into a easy to read format I will do the same for adventuring later I also need the while true statement here to give the player the option to come back to the start.
+<h3 class="mt-4">2. The Shopping System</h3>
+<p>The <code>shop()</code> function manages item acquisition. It uses a <code>while True</code> loop to keep the player in the shop menu until they explicitly choose to "Exit". Nested conditionals handle the selection of specific items within categories.</p>
+
+```python
 def shop():
     while True:
         print("Welcome to the shop! Here are your items: ")
@@ -72,8 +84,12 @@ def shop():
 
         else:
             print("That is not an item choice. Please select Potion, Armor, or Weapons.")
+```
 
-#As with the shop tab this is for the player to choose their adventure and what will happen with their choses I cannot code a full game at the moment so the choices aren't as indepth.
+<h3 class="mt-4">3. Exploration and Narrative Logic</h3>
+<p>The <code>adventuring()</code> function contains the narrative branches. Depending on the player's choice of location, different outcomes are triggered using Python's branching logic.</p>
+
+```python
 def adventuring():
     print("Welcome to the start of your adventure!")
     selected_action = input("Where do you want to explore? Choose one: Open the Tomb, Hack the Branches, Open the Door: ").title()
@@ -107,8 +123,12 @@ def adventuring():
 
     else:
         print("Please select a listed action. Please choose 'Open the Tomb', 'Hack the Branches', or 'Open the Door'.")
+```
 
-#This section is for the choice on what class they want along with what they plan to do after selecting their class.
+<h3 class="mt-4">4. Core Game Loop</h3>
+<p>The script checks for a valid class selection and enters the primary loop, driving the interaction between the shop and the adventuring zones.</p>
+
+```python
 if choice == "Knight" or choice == "Wizard":
     while True:  
         activity = input("Would you like to go to the Shop, Adventuring, or Exit? ").capitalize()
