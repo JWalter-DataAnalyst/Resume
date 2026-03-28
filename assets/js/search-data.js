@@ -432,9 +432,9 @@ ninja.data = [{
           description: "a project with no image",
           section: "Projects",handler: () => {
               window.location.href = "/Resume/projects/6_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+            },},{id: "projects-adventure-game",
+          title: 'Adventure Game',
+          description: "A text-based adventure demonstrating conditional logic, loops, and modular programming.",
           section: "Projects",handler: () => {
               window.location.href = "/Resume/projects/7_project/";
             },},{id: "projects-project-8",
