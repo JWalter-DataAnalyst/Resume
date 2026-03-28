@@ -1,178 +1,126 @@
 ---
 layout: page
 title: Adventure Game
-description: an adventure game using if, elif, and else statements
+description: A text-based adventure demonstrating conditional logic, loops, and modular programming.
 img: assets/img/Adventure_game.png
-importance: 2
+importance: 5
 category: work
-giscus_comments: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+This project serves as a technical demonstration of core programming concepts using Python. It features a text-based adventure game where player choices dictate the flow of the narrative and the availability of resources.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
-
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/Adventure_game.png
-    ---
+### Technical Overview
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="Logic Flow" class="img-fluid rounded z-depth-1" %}
+        <strong>Conditional Logic</strong>
+        <p>Utilizes <code>if/elif/else</code> blocks to manage complex branching paths and decision-making trees based on player input.</p>
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="World Map" class="img-fluid rounded z-depth-1" %}
+        <strong>Data Normalization</strong>
+        <p>Employs string methods like <code>.capitalize()</code> and <code>.upper()</code> to ensure input sanitization and program robustness.</p>
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Adventure_game.png" title="Game Splash" class="img-fluid rounded z-depth-1" %}
+        <strong>Functional Design</strong>
+        <p>Demonstrates modularity by encapsulating game systems (Shop, Adventure) into reusable Python functions.</p>
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, logic branches artistically fall into place. Right, the splash screen for our Adventure Game.
+    A summary of the programming principles showcased in this implementation.
 </div>
 
-You can also put regular text between your rows of images and code snippets.
-Say you wanted to write a little bit about your project before you posted the rest of the logic.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next sections.
+### Why this shows Concept Mastery
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <p>This project features a text-based adventure game implemented in Python. It demonstrates the use of conditional logic (<code>if</code>, <code>elif</code>, <code>else</code>), loops, functions, and user input handling. Below is a breakdown of the game's core modules.</p>
-    </div>
-</div>
+1.  **Nested `if` Statements:** By nesting conditions inside the `shop()` function, you show you can handle "sub-choices" (e.g., first picking a category, then picking an item).
+2.  **Boolean Logic:** Using `if choice == "Knight" or choice == "Wizard"` demonstrates how to evaluate multiple valid conditions at once.
+3.  **State Management:** The `while True` loop keeps the "webpage" (game) running until the user explicitly chooses to exit, showing an understanding of program lifecycle.
 
-<h3 class="mt-4">1. Initialization and Setup</h3>
-<p>The game begins by defining the world and allowing the player to select their class. We also initialize lists for the shop inventory and adventure locations.</p>
+### Source Code
 
 ```python
-# Character and world setup: Defining classes, items, and actions
-a = "Welcome to Gillinor! A land full of choices, mystery and potential for massive rewards. Anybody can make it in this world with the right loadout. Now, select your class: Knight or Wizard. "
+# Character and Area Setup
+a = "Welcome to Gillinor! Select your class (Knight/Wizard): "
 choice = input(a).capitalize()
-
-tasks = ["Shop", "Adventuring"]
 items = ["Potion", "Armor", "Weapons"]
 potion_items = ["Healing Potion", "Harming Potion", "Physical Potion"]
 armor_items = ["Adamant equipment", "Mithril equipment", "Rune equipment"]
 weapons_items = ["Adamant sword", "Mithril sword", "Rune sword"]
-actions = ["Open the Tomb", "Hack the Branches", "Open the Door"]
-```
 
-<h3 class="mt-4">2. The Shopping System</h3>
-<p>The <code>shop()</code> function manages item acquisition. It uses a <code>while True</code> loop to keep the player in the shop menu until they explicitly choose to "Exit". Nested conditionals handle the selection of specific items within categories.</p>
-
-```python
+# Shop System
 def shop():
     while True:
-        print("Welcome to the shop! Here are your items: ")
+        print("\nWelcome to the shop! Here are your items: ")
         print(items)
 
-        selected_item = input("Please select an item (Potion, Armor, Weapons), or type 'Exit' to leave the shop: ").capitalize()
+        selected_item = input("Please select an item, or type 'Exit' to leave: ").capitalize()
 
         if selected_item == "Potion":
             print("You have selected Potions: ", potion_items)
             potion_choice = input("Which potion would you like to buy? ").title()
-            if potion_choice == "Healing Potion":
-                print("You have obtained a Healing Potion.")
-            elif potion_choice == "Harming Potion":
-                print("You have obtained a Harming Potion.")
-            elif potion_choice == "Physical Potion":
-                print("You have obtained a Physical Potion.")
+            if potion_choice in potion_items:
+                print(f"You have obtained a {potion_choice}.")
             else:
-                print("Please select a potion choice.")
+                print("Please select a valid potion.")
 
         elif selected_item == "Armor":
             print("You have selected Armor: ", armor_items)
             armor_choice = input("Which armor would you like to buy? ").title()
-            if armor_choice == "Adamant Equipment":
-                print("You have obtained Adamant equipment.")
-            elif armor_choice == "Mithril Equipment":
-                print("You have obtained Mithril equipment.")
-            elif armor_choice == "Rune Equipment":
-                print("You have obtained Rune equipment.")
+            if armor_choice in armor_items:
+                print(f"You have obtained {armor_choice}.")
             else:
-                print("Please select an armor choice.")
+                print("Please select a valid armor choice.")
 
         elif selected_item == "Weapons":
             print("You have selected Weapons: ", weapons_items)
             weapon_choice = input("Which weapon would you like to buy? ").title()
-            if weapon_choice == "Adamant Sword":
-                print("You have obtained an Adamant sword.")
-            elif weapon_choice == "Mithril Sword":
-                print("You have obtained a Mithril sword.")
-            elif weapon_choice == "Rune Sword":
-                print("You have obtained a Rune sword.")
+            if weapon_choice in weapon_items:
+                print(f"You have obtained a {weapon_choice}.")
             else:
-                print("Please select a weapon choice.")
+                print("Please select a valid weapon choice.")
 
         elif selected_item == "Exit":
-            print("Thank you for visiting the shop. See you next time!")
+            print("Returning to the main menu...")
             break  
-
         else:
-            print("That is not an item choice. Please select Potion, Armor, or Weapons.")
-```
+            print("Invalid choice. Please select Potion, Armor, or Weapons.")
 
-<h3 class="mt-4">3. Exploration and Narrative Logic</h3>
-<p>The <code>adventuring()</code> function contains the narrative branches. Depending on the player's choice of location, different outcomes are triggered using Python's branching logic.</p>
-
-```python
+# Adventure Logic
 def adventuring():
-    print("Welcome to the start of your adventure!")
-    selected_action = input("Where do you want to explore? Choose one: Open the Tomb, Hack the Branches, Open the Door: ").title()
+    print("\nWelcome to the start of your adventure!")
+    selected_action = input("Where to explore? (Open the Tomb / Hack the Branches / Open the Door): ").title()
 
     if selected_action == "Open The Tomb":
-        print("You approach the ancient tomb. The stone door creaks open as you step inside...")
-        print("You notice four red doorways that illuminate the area")
+        print("You approach the ancient tomb...")
         door_choice = input("What door do you go through? N, W, E, S: ").upper()
         if door_choice in ["N", "W", "E", "S"]:
             print("You fall through a trapdoor and perish.")
-        else:
-            print("Please select a door choice.")
 
     elif selected_action == "Hack The Branches":
-        print("You hack your way through the thick branches, revealing a hidden path into the forest...")
-        print("As you walk through the forest you see a building. Do you enter? Y/N ")
-        building_choice = input("Do you enter? Y/N ").upper()
+        print("You reveal a hidden path into the forest...")
+        building_choice = input("Do you enter the building? Y/N ").upper()
         if building_choice == "Y":
-            print("You are stabbed from behind and slain")
+            print("You are stabbed from behind and slain.")
         else:
-            print("You decide to turn around returning to the village.")
+            print("You decide to return to the village.")
 
     elif selected_action == "Open The Door":
-        print("You push the door open and step into a grand hall filled with mysteries...")
-        print("You see a book that looks extra special. Do you reach for the book? Y/N ")
-        book_choice = input("Y/N ").upper()
+        print("You step into a grand hall...")
+        book_choice = input("Do you reach for the floating book? Y/N ").upper()
         if book_choice == "Y":
-            print("The book levitates off from the bookshelf and begins attacking you. You were unable to get proper footing and fall to the book.")
+            print("The book attacks you. You fall.")
         else:
-            print("You decide to turn around returning to the village.")
+            print("You decide to return to the village.")
 
-    else:
-        print("Please select a listed action. Please choose 'Open the Tomb', 'Hack the Branches', or 'Open the Door'.")
-```
-
-<h3 class="mt-4">4. Core Game Loop</h3>
-<p>The script checks for a valid class selection and enters the primary loop, driving the interaction between the shop and the adventuring zones.</p>
-
-```python
+# Main Game Loop
 if choice == "Knight" or choice == "Wizard":
     while True:  
-        activity = input("Would you like to go to the Shop, Adventuring, or Exit? ").capitalize()
-
+        activity = input("\nWould you like to go to the Shop, Adventuring, or Exit? ").capitalize()
         if activity == "Shop":
             shop()
         elif activity == "Adventuring":
             adventuring()
         elif activity == "Exit":
-            print("Thank you for playing!")
             break  
         else:
-            print("Please select a listed choice, please choose Shop, Adventuring, or Exit.")
+            print("Invalid activity.")
 ```
-
-{% endraw %}
