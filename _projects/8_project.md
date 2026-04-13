@@ -8,42 +8,49 @@ category: work
 giscus_comments: true
 ---
 
-This project, developed for **DATA 4980 Data Visualization**, is an interactive dashboard built with Python, Streamlit, and Plotly. It explores U.S. air quality data from 2014 to 2023, specifically highlighting how national aggregate improvements often mask significant regional declines in air quality due to wildfire activity.
+This project is an interactive dashboard built with Python, Streamlit, and Plotly. It explores U.S. air quality data from 2014 to 2023, specifically highlighting how national aggregate improvements often mask significant regional declines in air quality due to wildfire activity.
 
-## Storytelling: The Interaction-Driven Insight
+### Technical Overview
 
-The national median AQI trend shows modest improvement, but this aggregate masks a widening inequality. A subset of western states have experienced *worsening* air quality, driven specifically by **PM2.5 from wildfire activity**. This divergence is only discoverable through coordinated interaction across the dashboard's four primary views.
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <strong>Interaction Logic</strong>
+        <p>Uses Streamlit and Plotly to coordinate four primary views, allowing users to discover regional divergences in aggregate data.</p>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <strong>Data Pipeline</strong>
+        <p>Implements cached data ingestion and aggregation of EPA AQS public records using <code>requests</code> and <code>pandas</code>.</p>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <strong>Statistical Analysis</strong>
+        <p>Employs box plots and trend analysis to visualize variance and extreme events driven by wildfire activity.</p>
+    </div>
+</div>
+<div class="caption">
+    A summary of the data engineering and visualization principles showcased in this implementation.
+</div>
 
-### The User Journey
+### Why this shows Concept Mastery
 
-1.  **Set the National Baseline:** Upon loading, View 2 displays a dark blue national average trendline showing a gradual improvement from 38.4 in 2014 to 35.1 in 2019.
-2.  **Expose the Geographic Paradox:** By adjusting the *Map Year* timeline to 2020-2022, View 1 (Choropleth) shows Western states (CA, OR, ID, MT, UT) darkening significantly. By 2021, California's median AQI sits at 47.3—35% above the national average.
-3.  **Identify Regional Discrepancy:** Clicking California on the map reveals a direction change post-2018, rising 38% while the national average declined by 5%.
-4.  **Pinpoint the Pollutant:** View 3 (Pollutant Driver) shows that PM2.5 becomes the dominant driver in these states starting in 2018, contrasting with the national trend where PM2.5 is decreasing.
-5.  **Verify Distribution Widening:** Moving the *Year Range* to 2018–2023 in View 4 (Box Plot) shows the Pacific region's IQR widening dramatically, signifying increased variance and extreme events.
+1.  **Synchronized Interactions:** Linking the choropleth map with trendlines and box plots demonstrates mastery over complex, multi-view dashboard state and event handling.
+2.  **Performance Engineering:** Utilizing <code>@st.cache_data</code> for processing heavy yearly datasets shows an understanding of application performance optimization and efficient resource management.
+3.  **Ethical Communication:** Proactively addressing aggregation bias and monitor coverage limitations through technical mitigations demonstrates a professional approach to data integrity and transparency.
+
+---
+### Analysis Insights
+
+#### Reasons for an Interaction Sequence
+If I were to draw a static graph illustrating the trend in median AQI in the U.S. from 2014 to 2023, the impression left on the viewer is one of improved air quality. This interpretation would not be incorrect; however, it would be *seriously incomplete*.
+
+This specific interaction sequence enables a viewer to **see the discrepancy**, rather than just being told about it. It is the sole means through which both aspects of reality—national improvement and regional crisis—can be illustrated through one visualization.
+
+#### Rejected Options
+*   **Option 1 – Static Tableau Dashboard:** Synchronizing filters across views was difficult to narrate. Streamlit allows for persistent sidebar state which is better for guided storytelling.
+*   **Option 2 – Small Multiples:** Faceting 48 states resulted in plots too small to read (80x60px). Using an opacity overlay on a single chart provides context while allowing the user to focus on specific outliers.
 
 ---
 
-## Dashboard Design
-
-### Encoding Justification
-
--   **Geographic View (Choropleth):** Uses a sequential **YlOrRd** palette. Darker fills intuitively represent higher AQI (worse quality).
--   **Trend Analysis (Line Chart):** Maps quantitative values (AQI and Year) to positions. The national average is highlighted with a 3px blue line for colorblind accessibility and clear contrast against the 0.8px gray state lines.
--   **Pollutant Breakdown (Stacked Bar):** Best for analyzing the composition of pollution sources over time without losing the scale of total unhealthy days.
--   **Regional Distribution (Box Plot):** Essential for visualizing statistical dispersion and outliers across different EPA regions, showing the "Pacific widening" effect.
-
-### Ethics & Mitigations
-
-1.  **Aggregation Bias:** State-level averages can hide local disparities. *Mitigation:* All data is explicitly labeled as state averages, and the "National Average Lies" headline encourages critical interpretation.
-2.  **Monitor Coverage:** EPA monitors are often concentrated in urban areas. *Mitigation:* The sidebar clearly identifies EPA AQS monitors as the source, acknowledging the technical nature of the data collection.
-3.  **Cherry-Picking:** Year-range selection can skew results. *Mitigation:* The dashboard defaults to the full 2014-2023 span to ensure context is always available.
-
----
-
-## Source Code
-
-Below is the complete Streamlit implementation.
+### Source Code
 
 ```python
 import streamlit as st
