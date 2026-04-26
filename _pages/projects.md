@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Projects
+title: projects
 permalink: /Projects/
 description: Projects I have worked on while studying data analytics at the University of Toledo
 nav: true
