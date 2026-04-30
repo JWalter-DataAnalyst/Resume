@@ -10,7 +10,7 @@ ninja.data = [{
       window.location.href = "/Resume/";
     },
   },{id: "nav-projects",
-          title: "Projects",
+          title: "projects",
           description: "Projects I have worked on while studying data analytics at the University of Toledo",
           section: "Navigation",
           handler: () => {
@@ -437,11 +437,6 @@ ninja.data = [{
           description: "A text-based adventure demonstrating conditional logic, loops, and modular programming.",
           section: "Projects",handler: () => {
               window.location.href = "/Resume/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/Resume/projects/8_project/";
             },},{id: "projects-project-9",
           title: 'project 9',
           description: "another project with an image 🎉",
